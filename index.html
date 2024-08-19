@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="clock">
+        <h1>Digital Clock</h1>
+        <div class="time">
+            <div class="box">
+                <p class="value hr">00</p>
+                <p class="box-text">HR</p>
+            </div>
+            <p class="colon">:</p>
+            <div class="box">
+                <p class="value min">00</p>
+                <p class="box-text">MIN</p>
+            </div>
+            <p class="colon">:</p>
+            <div class="box">
+                <p class="value sec">00</p>
+                <p class="box-text">SEC</p>
+        </div>
+    </div>
+
+
+    <script>
+
+        setInterval(function setTime(){
+            
+            let date = new Date();
+            let hr = date.getHours();
+            let min = date.getMinutes();
+            let sec = date.getSeconds();
+
+            if(hr < 10){
+                hr = '0' + hr;
+            }
+            if(min < 10){
+                min = '0' + min;
+            }
+            if(sec < 10){
+                sec = '0' + sec;
+            }
+
+            document.getElementsByClassName('hr')[0].innerHTML = hr;
+            document.getElementsByClassName('min')[0].innerHTML = min;
+            document.getElementsByClassName('sec')[0].innerHTML = sec;
+        }, 1000);
+
+    </script>
+</body>
+</html>
